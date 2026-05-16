@@ -1,4 +1,43 @@
+"use client";
+
 import styles from "./WhatsInside.module.css";
+import { motion } from "framer-motion";
+
+const cards = [
+  {
+    title: "Motion System",
+    desc: "Elegant transitions and cinematic interactions.",
+    type: "motion",
+    className: "large",
+  },
+  {
+    title: "Glass Architecture",
+    desc: "Layered interface depth with modular composition.",
+    type: "glass",
+  },
+  {
+    title: "Typography Engine",
+    desc: "Precise hierarchy and intentional spacing.",
+    type: "orbit",
+  },
+  {
+    title: "Adaptive Layout",
+    desc: "Responsive systems built for modern interfaces.",
+    type: "stack",
+    className: "wide",
+  },
+  {
+    title: "AI Ready",
+    desc: "Designed for prompting workflows and interface generation.",
+    type: "editor",
+    className: "wide",
+  },
+  {
+    title: "Growing Fast",
+    desc: "Built as a scalable ecosystem for modern products.",
+    type: "chart",
+  },
+];
 
 export default function WhatsInside() {
   return (
@@ -8,9 +47,7 @@ export default function WhatsInside() {
 
       <div className={styles.heading}>
 
-        <span>
-          What’s Inside
-        </span>
+        <span>What’s Inside</span>
 
         <h2>
           A cinematic ecosystem
@@ -23,180 +60,140 @@ export default function WhatsInside() {
 
       <div className={styles.grid}>
 
-        {/* CARD 1 */}
+        {cards.map((card, index) => (
 
-        <div className={`${styles.card} ${styles.large}`}>
+          <motion.div
+            key={index}
+            whileHover={{
+              y:-8,
+              scale:1.01
+            }}
+            transition={{
+              duration:0.5,
+              ease:[0.22,1,0.36,1]
+            }}
+            className={`
+              ${styles.card}
+              ${card.className ? styles[card.className] : ""}
+            `}
+          >
 
-          <div className={styles.tags}>
+            {/* PREVIEW */}
 
-            <span>Motion</span>
-            <span>Glass</span>
-            <span>Adaptive</span>
-            <span>Typography</span>
-            <span>Layout</span>
+            <div className={styles.preview}>
 
-          </div>
+              {/* MOTION */}
 
-          <div className={styles.cardContent}>
+              {card.type === "motion" && (
+                <>
+                  <div className={styles.tags}>
 
-            <h3>
-              130+ Interface Patterns
-            </h3>
+                    <span>Motion</span>
+                    <span>Glass</span>
+                    <span>Adaptive</span>
+                    <span>Typography</span>
 
-            <p>
-              Motion systems, glass architecture,
-              adaptive layouts, and cinematic UI
-              crafted into one modular ecosystem.
-            </p>
+                  </div>
 
-          </div>
+                  <div className={styles.motionGrid}>
 
-        </div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
 
-        {/* CARD 2 */}
+                  </div>
+                </>
+              )}
 
-        <div className={styles.card}>
+              {/* GLASS */}
 
-          <div className={styles.iconGrid}>
+              {card.type === "glass" && (
+                <div className={styles.glassPreview}>
 
-            <div></div>
-            <div></div>
-            <div></div>
+                  <div className={styles.glassCard}></div>
+                  <div className={styles.glassCard}></div>
+                  <div className={styles.glassCard}></div>
 
-          </div>
+                </div>
+              )}
 
-          <div className={styles.cardContent}>
+              {/* ORBIT */}
 
-            <h3>
-              Visual Editors
-            </h3>
+              {card.type === "orbit" && (
+                <div className={styles.orbit}>
 
-            <p>
-              Interactive tooling designed for
-              modern interface workflows.
-            </p>
+                  <div className={styles.center}></div>
 
-          </div>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
 
-        </div>
+                </div>
+              )}
 
-        {/* CARD 3 */}
+              {/* STACK */}
 
-        <div className={styles.card}>
+              {card.type === "stack" && (
+                <div className={styles.stackPreview}>
 
-          <div className={styles.orbit}>
+                  <div className={styles.stackLine}></div>
+                  <div className={styles.stackLine}></div>
+                  <div className={styles.stackLine}></div>
+                  <div className={styles.stackLine}></div>
 
-            <div className={styles.center}></div>
+                </div>
+              )}
 
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+              {/* EDITOR */}
 
-          </div>
+              {card.type === "editor" && (
+                <div className={styles.editor}>
 
-          <div className={styles.cardContent}>
+                  <div className={styles.editorTop}>
 
-            <h3>
-              Well Organized
-            </h3>
+                    <span></span>
+                    <span></span>
+                    <span></span>
 
-            <p>
-              Structured systems so everything
-              feels intentional and connected.
-            </p>
+                  </div>
 
-          </div>
+                  <div className={styles.editorBody}>
 
-        </div>
+                    <div className={styles.code}></div>
+                    <div className={styles.code}></div>
+                    <div className={styles.codeSmall}></div>
 
-        {/* CARD 4 */}
+                  </div>
 
-        <div className={`${styles.card} ${styles.wide}`}>
+                </div>
+              )}
 
-          <div className={styles.stackPreview}>
+              {/* CHART */}
 
-            <div className={styles.stackLine}></div>
-            <div className={styles.stackLine}></div>
-            <div className={styles.stackLine}></div>
-            <div className={styles.stackLine}></div>
+              {card.type === "chart" && (
+                <div className={styles.chart}>
 
-          </div>
+                  <div className={styles.chartLine}></div>
 
-          <div className={styles.cardContent}>
-
-            <h3>
-              Adaptive Stack
-            </h3>
-
-            <p>
-              Responsive systems built for
-              modern devices and layouts.
-            </p>
-
-          </div>
-
-        </div>
-
-        {/* CARD 5 */}
-
-        <div className={`${styles.card} ${styles.wide}`}>
-
-          <div className={styles.editor}>
-
-            <div className={styles.editorTop}>
-
-              <span></span>
-              <span></span>
-              <span></span>
+                </div>
+              )}
 
             </div>
 
-            <div className={styles.editorCode}>
-              $ animate interface motion
+            {/* CONTENT */}
+
+            <div className={styles.content}>
+
+              <h3>{card.title}</h3>
+
+              <p>{card.desc}</p>
+
             </div>
 
-          </div>
+          </motion.div>
 
-          <div className={styles.cardContent}>
-
-            <h3>
-              AI Ready
-            </h3>
-
-            <p>
-              Designed for modern AI workflows,
-              prompting systems, and interface generation.
-            </p>
-
-          </div>
-
-        </div>
-
-        {/* CARD 6 */}
-
-        <div className={styles.card}>
-
-          <div className={styles.chart}>
-
-            <div className={styles.chartLine}></div>
-
-          </div>
-
-          <div className={styles.cardContent}>
-
-            <h3>
-              Growing Fast
-            </h3>
-
-            <p>
-              Built to scale as a complete
-              interface ecosystem.
-            </p>
-
-          </div>
-
-        </div>
+        ))}
 
       </div>
 
