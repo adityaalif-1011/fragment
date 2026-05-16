@@ -3,7 +3,7 @@ import { GeistSans } from "geist/font/sans";
 
 export const metadata = {
   title: "Fragment",
-  description: "Modular Interface System",
+  description: "Architectural Interface System",
 };
 
 export default function RootLayout({ children }) {

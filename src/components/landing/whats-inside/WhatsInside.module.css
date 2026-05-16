@@ -1,0 +1,349 @@
+.section{
+  padding:180px 8%;
+}
+
+/* HEADING */
+
+.heading{
+  margin-bottom:48px;
+}
+
+.heading span{
+  display:block;
+
+  font-size:13px;
+
+  text-transform:uppercase;
+
+  letter-spacing:0.12em;
+
+  color:rgba(255,255,255,0.4);
+
+  margin-bottom:20px;
+}
+
+.heading h2{
+  font-size:clamp(48px, 6vw, 88px);
+
+  line-height:0.95;
+
+  letter-spacing:-0.06em;
+
+  max-width:900px;
+}
+
+/* GRID */
+
+.grid{
+  display:grid;
+
+  grid-template-columns:
+  1.4fr 0.8fr 0.8fr;
+
+  gap:24px;
+}
+
+/* CARD */
+
+.card{
+  position:relative;
+
+  min-height:360px;
+
+  padding:28px;
+
+  border-radius:36px;
+
+  background:rgba(255,255,255,0.03);
+
+  border:1px solid rgba(255,255,255,0.06);
+
+  overflow:hidden;
+
+  backdrop-filter:blur(20px);
+
+  transition:0.4s ease;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+
+  background:rgba(255,255,255,0.05);
+}
+
+.large{
+  grid-column:span 1;
+}
+
+.wide{
+  grid-column:span 2;
+}
+
+/* TAGS */
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:12px;
+
+  margin-bottom:120px;
+}
+
+.tags span{
+  padding:10px 14px;
+
+  border-radius:14px;
+
+  background:rgba(255,255,255,0.05);
+
+  border:1px solid rgba(255,255,255,0.06);
+
+  font-size:13px;
+
+  color:rgba(255,255,255,0.7);
+}
+
+/* CONTENT */
+
+.cardContent{
+  position:absolute;
+
+  left:28px;
+  right:28px;
+  bottom:28px;
+}
+
+.cardContent h3{
+  font-size:32px;
+
+  letter-spacing:-0.05em;
+
+  margin-bottom:12px;
+}
+
+.cardContent p{
+  color:rgba(255,255,255,0.55);
+
+  line-height:1.8;
+}
+
+/* ICON GRID */
+
+.iconGrid{
+  display:grid;
+
+  grid-template-columns:repeat(2,80px);
+
+  gap:16px;
+
+  justify-content:center;
+
+  margin-top:40px;
+}
+
+.iconGrid div{
+  width:80px;
+  height:80px;
+
+  border-radius:24px;
+
+  background:rgba(255,255,255,0.05);
+
+  border:1px solid rgba(255,255,255,0.06);
+}
+
+/* ORBIT */
+
+.orbit{
+  position:relative;
+
+  width:220px;
+  height:220px;
+
+  margin:20px auto 0;
+}
+
+.center{
+  position:absolute;
+
+  width:70px;
+  height:70px;
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,0.08);
+
+  left:50%;
+  top:50%;
+
+  transform:translate(-50%, -50%);
+}
+
+.orbit span{
+  position:absolute;
+
+  width:50px;
+  height:50px;
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,0.05);
+
+  border:1px solid rgba(255,255,255,0.06);
+}
+
+.orbit span:nth-child(2){
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.orbit span:nth-child(3){
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.orbit span:nth-child(4){
+  left:0;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.orbit span:nth-child(5){
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+/* STACK */
+
+.stackPreview{
+  display:flex;
+  flex-direction:column;
+
+  gap:18px;
+}
+
+.stackLine{
+  height:52px;
+
+  border-radius:18px;
+
+  background:rgba(255,255,255,0.05);
+}
+
+/* EDITOR */
+
+.editor{
+  border-radius:24px;
+
+  background:rgba(255,255,255,0.04);
+
+  border:1px solid rgba(255,255,255,0.06);
+
+  overflow:hidden;
+}
+
+.editorTop{
+  height:52px;
+
+  border-bottom:1px solid rgba(255,255,255,0.06);
+
+  display:flex;
+  align-items:center;
+
+  gap:8px;
+
+  padding:0 20px;
+}
+
+.editorTop span{
+  width:10px;
+  height:10px;
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,0.14);
+}
+
+.editorCode{
+  padding:28px;
+
+  font-size:18px;
+
+  color:rgba(255,255,255,0.7);
+
+  font-family:monospace;
+}
+
+/* CHART */
+
+.chart{
+  position:relative;
+
+  height:220px;
+
+  overflow:hidden;
+}
+
+.chartLine{
+  position:absolute;
+
+  width:140%;
+  height:3px;
+
+  background:
+  linear-gradient(
+    90deg,
+    rgba(255,255,255,0.1),
+    rgba(255,255,255,0.9)
+  );
+
+  bottom:40px;
+
+  transform:rotate(-10deg);
+}
+
+/* RESPONSIVE */
+
+@media (max-width:1100px){
+
+  .grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .wide{
+    grid-column:span 2;
+  }
+
+}
+
+@media (max-width:768px){
+
+  .section{
+    padding:140px 24px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .wide{
+    grid-column:span 1;
+  }
+
+  .card{
+    min-height:320px;
+  }
+
+  .heading h2{
+    font-size:52px;
+  }
+
+  .cardContent h3{
+    font-size:26px;
+  }
+
+}
