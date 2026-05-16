@@ -1,25 +1,32 @@
+"use client";
+
 import styles from "./Hero.module.css";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
     <section className={styles.hero}>
 
-      <div className={styles.light}></div>
+      <div className={styles.spotlight}></div>
 
-      <div className={styles.content}>
+      <motion.div
+        initial={{ opacity:0, y:40 }}
+        animate={{ opacity:1, y:0 }}
+        transition={{ duration:1 }}
+        className={styles.left}
+      >
 
         <div className={styles.badge}>
-          Modular Interface System
+          Fragment — Interface Architecture
         </div>
 
         <h1>
           Build systems,
-          <br />
           not noise.
         </h1>
 
         <p>
-          A cinematic interface system crafted
+          A cinematic interface system designed
           for modern digital products.
         </p>
 
@@ -33,7 +40,7 @@ export default function Hero() {
           </button>
         </div>
 
-      </div>
+      </motion.div>
 
     </section>
   );
