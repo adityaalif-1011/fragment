@@ -7,21 +7,19 @@ export default function Hero() {
   return (
     <section className={styles.hero}>
 
-      <div className={styles.gradient}></div>
+      <div className={styles.glow}></div>
 
-      <div className={styles.grid}>
-
-        {/* LEFT */}
+      <div className={styles.container}>
 
         <motion.div
+          className={styles.left}
           initial={{ opacity:0, y:40 }}
           animate={{ opacity:1, y:0 }}
-          transition={{ duration:1 }}
-          className={styles.left}
+          transition={{ duration:.8 }}
         >
 
           <div className={styles.badge}>
-            Fragment — Interface Architecture
+            Fragment • Digital Product Marketplace
           </div>
 
           <h1>
@@ -30,151 +28,106 @@ export default function Hero() {
           </h1>
 
           <p>
-            A cinematic interface system crafted
-            for modern digital products.
+            Premium UI Kits, Build Kits, Templates,
+            and Interface Systems crafted for modern products.
           </p>
 
           <div className={styles.actions}>
+
             <button className={styles.primary}>
-              Explore System
+              Explore Products
             </button>
 
             <button className={styles.secondary}>
-              Documentation
+              Read Articles
             </button>
+
           </div>
 
         </motion.div>
 
-        {/* RIGHT */}
-
         <motion.div
-          animate={{ y:[0,-16,0] }}
-          transition={{
-            duration:8,
-            repeat:Infinity,
-            ease:"easeInOut"
-          }}
           className={styles.right}
+          initial={{ opacity:0, scale:.95 }}
+          animate={{ opacity:1, scale:1 }}
+          transition={{ duration:1 }}
         >
 
-          {/* MAIN WINDOW */}
+          <div className={styles.window}>
 
-          <div className={styles.windowMain}>
+            <div className={styles.windowTop}>
 
-            {/* TOPBAR */}
-
-            <div className={styles.topbar}>
-
-              <div className={styles.dots}>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-
-              <div className={styles.search}></div>
-
-              <div className={styles.status}></div>
+              <span></span>
+              <span></span>
+              <span></span>
 
             </div>
 
-            {/* SIDEBAR */}
+            <div className={styles.windowContent}>
 
-            <div className={styles.sidebar}>
+              <div className={styles.header}>
 
-              <div className={styles.sideActive}></div>
+                <h3>Featured Products</h3>
 
-              <div className={styles.side}></div>
-              <div className={styles.side}></div>
-              <div className={styles.side}></div>
-              <div className={styles.side}></div>
-
-            </div>
-
-            {/* CONTENT */}
-
-            <div className={styles.content}>
-
-              {/* HERO CARD */}
-
-              <div className={styles.heroCard}>
-
-                <div className={styles.heroTop}>
-                  <div className={styles.heroTitle}></div>
-                  <div className={styles.heroBadge}></div>
-                </div>
-
-                <div className={styles.heroGraph}>
-
-                  <div className={styles.graphGlow}></div>
-
-                </div>
-
-                <div className={styles.heroMetrics}>
-
-                  <div className={styles.metric}>
-                    <span></span>
-                    <strong></strong>
-                  </div>
-
-                  <div className={styles.metric}>
-                    <span></span>
-                    <strong></strong>
-                  </div>
-
-                  <div className={styles.metric}>
-                    <span></span>
-                    <strong></strong>
-                  </div>
-
+                <div className={styles.live}>
+                  Live
                 </div>
 
               </div>
 
-              {/* GRID */}
+              <div className={styles.products}>
 
-              <div className={styles.cards}>
+                <div className={styles.product}>
+                  <div className={styles.thumb}></div>
 
-                <div className={styles.card}>
-                  <div className={styles.cardLine}></div>
-                  <div className={styles.cardBox}></div>
+                  <div>
+                    <h4>SaaS Dashboard Kit</h4>
+                    <p>$49</p>
+                  </div>
                 </div>
 
-                <div className={styles.card}>
-                  <div className={styles.cardLine}></div>
-                  <div className={styles.cardBox}></div>
+                <div className={styles.product}>
+                  <div className={styles.thumb}></div>
+
+                  <div>
+                    <h4>Portfolio Kit</h4>
+                    <p>$29</p>
+                  </div>
+                </div>
+
+                <div className={styles.product}>
+                  <div className={styles.thumb}></div>
+
+                  <div>
+                    <h4>AI Startup Kit</h4>
+                    <p>$59</p>
+                  </div>
                 </div>
 
               </div>
 
-              {/* BOTTOM */}
+              <div className={styles.stats}>
 
-              <div className={styles.bottomGrid}>
+                <div>
+                  <strong>120+</strong>
+                  <span>Products</span>
+                </div>
 
-                <div className={styles.smallPanel}></div>
-                <div className={styles.smallPanel}></div>
-                <div className={styles.smallPanel}></div>
+                <div>
+                  <strong>3.2k</strong>
+                  <span>Downloads</span>
+                </div>
+
+                <div>
+                  <strong>98%</strong>
+                  <span>Rating</span>
+                </div>
 
               </div>
 
             </div>
 
           </div>
-
-          {/* FLOATING PANEL */}
-
-          <div className={styles.floatPanel}>
-
-            <div className={styles.floatLine}></div>
-            <div className={styles.floatLineSmall}></div>
-
-            <div className={styles.floatPreview}></div>
-
-          </div>
-
-          {/* MINI */}
-
-          <div className={styles.floatMini}></div>
 
         </motion.div>
 

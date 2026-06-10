@@ -6,13 +6,13 @@ export default function Navbar() {
       <div className={styles.logo}>Fragment</div>
 
       <div className={styles.links}>
-        <a href="#">System</a>
-        <a href="#">Components</a>
-        <a href="#">Github</a>
+        <a href="/products">Products</a>
+<a href="/articles">Articles</a>
+<a href="#">About</a>
       </div>
 
       <button className={styles.button}>
-        Start
+        Explore
       </button>
     </nav>
   );

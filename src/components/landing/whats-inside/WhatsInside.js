@@ -3,39 +3,39 @@
 import styles from "./WhatsInside.module.css";
 import { motion } from "framer-motion";
 
-const cards = [
+const items = [
   {
-    title: "Motion System",
-    desc: "Elegant transitions and cinematic interactions.",
-    type: "motion",
+    title: "UI Components",
+    desc: "Reusable building blocks crafted for modern interfaces.",
+    type: "components",
     className: "large",
   },
   {
-    title: "Glass Architecture",
-    desc: "Layered interface depth with modular composition.",
-    type: "glass",
+    title: "Build Kits",
+    desc: "Complete systems ready to accelerate development.",
+    type: "kits",
   },
   {
-    title: "Typography Engine",
-    desc: "Precise hierarchy and intentional spacing.",
-    type: "orbit",
+    title: "Templates",
+    desc: "Premium layouts designed for real-world products.",
+    type: "templates",
   },
   {
-    title: "Adaptive Layout",
-    desc: "Responsive systems built for modern interfaces.",
-    type: "stack",
+    title: "Documentation",
+    desc: "Clear implementation guides and examples.",
+    type: "docs",
     className: "wide",
   },
   {
-    title: "AI Ready",
-    desc: "Designed for prompting workflows and interface generation.",
-    type: "editor",
+    title: "Developer First",
+    desc: "Built for Next.js and modern frontend workflows.",
+    type: "dev",
     className: "wide",
   },
   {
-    title: "Growing Fast",
-    desc: "Built as a scalable ecosystem for modern products.",
-    type: "chart",
+    title: "Growing Library",
+    desc: "Continuously expanding collection of systems and assets.",
+    type: "growth",
   },
 ];
 
@@ -43,152 +43,85 @@ export default function WhatsInside() {
   return (
     <section className={styles.section}>
 
-      {/* HEADING */}
-
       <div className={styles.heading}>
 
-        <span>What’s Inside</span>
+        <span>Why Fragment</span>
 
         <h2>
-          A cinematic ecosystem
-          for modern interfaces.
+          Everything you need
+          to build faster.
         </h2>
 
       </div>
 
-      {/* GRID */}
-
       <div className={styles.grid}>
 
-        {cards.map((card, index) => (
+        {items.map((item, index) => (
 
           <motion.div
             key={index}
             whileHover={{
-              y:-8,
-              scale:1.01
+              y: -8,
             }}
             transition={{
-              duration:0.5,
-              ease:[0.22,1,0.36,1]
+              duration: 0.4,
             }}
             className={`
               ${styles.card}
-              ${card.className ? styles[card.className] : ""}
+              ${item.className ? styles[item.className] : ""}
             `}
           >
 
-            {/* PREVIEW */}
-
             <div className={styles.preview}>
 
-              {/* MOTION */}
-
-              {card.type === "motion" && (
-                <>
-                  <div className={styles.tags}>
-
-                    <span>Motion</span>
-                    <span>Glass</span>
-                    <span>Adaptive</span>
-                    <span>Typography</span>
-
-                  </div>
-
-                  <div className={styles.motionGrid}>
-
-                    <div></div>
-                    <div></div>
-                    <div></div>
-
-                  </div>
-                </>
-              )}
-
-              {/* GLASS */}
-
-              {card.type === "glass" && (
-                <div className={styles.glassPreview}>
-
-                  <div className={styles.glassCard}></div>
-                  <div className={styles.glassCard}></div>
-                  <div className={styles.glassCard}></div>
-
+              {item.type === "components" && (
+                <div className={styles.componentGrid}>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
                 </div>
               )}
 
-              {/* ORBIT */}
+              {item.type === "kits" && (
+                <div className={styles.kitPreview}>
+                  <div></div>
+                  <div></div>
+                </div>
+              )}
 
-              {card.type === "orbit" && (
-                <div className={styles.orbit}>
+              {item.type === "templates" && (
+                <div className={styles.templatePreview}>
+                  <div></div>
+                </div>
+              )}
 
-                  <div className={styles.center}></div>
-
+              {item.type === "docs" && (
+                <div className={styles.docsPreview}>
                   <span></span>
                   <span></span>
                   <span></span>
                   <span></span>
-
                 </div>
               )}
 
-              {/* STACK */}
-
-              {card.type === "stack" && (
-                <div className={styles.stackPreview}>
-
-                  <div className={styles.stackLine}></div>
-                  <div className={styles.stackLine}></div>
-                  <div className={styles.stackLine}></div>
-                  <div className={styles.stackLine}></div>
-
+              {item.type === "dev" && (
+                <div className={styles.devPreview}>
+                  <div></div>
                 </div>
               )}
 
-              {/* EDITOR */}
-
-              {card.type === "editor" && (
-                <div className={styles.editor}>
-
-                  <div className={styles.editorTop}>
-
-                    <span></span>
-                    <span></span>
-                    <span></span>
-
-                  </div>
-
-                  <div className={styles.editorBody}>
-
-                    <div className={styles.code}></div>
-                    <div className={styles.code}></div>
-                    <div className={styles.codeSmall}></div>
-
-                  </div>
-
-                </div>
-              )}
-
-              {/* CHART */}
-
-              {card.type === "chart" && (
-                <div className={styles.chart}>
-
-                  <div className={styles.chartLine}></div>
-
+              {item.type === "growth" && (
+                <div className={styles.growthPreview}>
+                  <div></div>
                 </div>
               )}
 
             </div>
 
-            {/* CONTENT */}
-
             <div className={styles.content}>
-
-              <h3>{card.title}</h3>
-
-              <p>{card.desc}</p>
-
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
             </div>
 
           </motion.div>
